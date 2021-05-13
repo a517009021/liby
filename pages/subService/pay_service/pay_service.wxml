@@ -1,0 +1,72 @@
+<view class="page" data-weui-theme="{{theme}}">
+  <view class="page__bd">
+    <view class="weui-article">
+      <view class="weui-article__h1">{{subService}}</view>
+      <!-- sub1: ['劳动争议', '合同纠纷', '法律援助', '公证服务'] -->
+      <view class="weui-article__section">
+        <!-- <view class="weui-article__h2">简要描述</view> -->
+        <view class="weui-cells weui-cells_form">
+          <!-- 地点 -->
+          <block wx:if="{{subService != '车位租金'}}">
+            <view class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after">
+              <view class="weui-cell__hd">
+                <label class="weui-label" style="width: 3em; font-size: 1.05em">地点:</label>
+              </view>
+              <view class="weui-cell__bd">
+                <picker bindchange="placeChange" range="{{places}}" index="{{index}} ">
+                  <view class="weui-select" style="text-align:center">{{places[index]}}</view>
+                </picker>
+              </view>
+            </view>
+          </block>
+          <!-- 车牌号码 -->
+          <block wx:else>
+            <view class="weui-cell weui-cell_active">
+              <view class="weui-cell__hd"><label class="weui-label">车牌号码:</label></view>
+              <view class="weui-cell__bd weui-flex">
+                <input class="weui-input" type="digit" placeholder="请输入车牌号码" placeholder-class="weui-input__placeholder"
+                  bindinput="onInput" value="{{plateNumber}}" data-model="plateNumber"/>
+                <view wx:if="{{showClearBtn && plateNumber}}" class="weui-btn_reset weui-btn_icon weui-btn_input-clear"
+                  bindtap="onClear" data-model="plateNumber">
+                  <i class="weui-icon-clear"></i>
+                </view>
+              </view>
+            </view>
+          </block>
+          <!-- 日期 -->
+          <view class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after">
+            <view class="weui-cell__hd">
+              <label class="weui-label" style="width: 3em; font-size: 1.05em">日期:</label>
+            </view>
+            <view class="weui-cell__bd">
+              <picker bindchange="dateChange" mode="date" fields="month">
+                <view class="weui-select" style="text-align:center">{{selectedDate}}</view>
+              </picker>
+            </view>
+          </view>
+          <!-- 金额输入 -->
+          <view class="weui-cell weui-cell_active">
+            <view class="weui-cell__hd"><label class="weui-label">金额:</label></view>
+            <view class="weui-cell__bd weui-flex">
+              <input class="weui-input" type="digit" placeholder="请输入缴纳金额" placeholder-class="weui-input__placeholder"
+                bindinput="onInput" value="{{cost}}" data-model="cost" />
+              <view wx:if="{{showClearBtn && cost}}" class="weui-btn_reset weui-btn_icon weui-btn_input-clear"
+                bindtap="onClear" data-model="cost">
+                <i class="weui-icon-clear"></i>
+              </view>
+            </view>
+          </view>
+          <!-- 备注 -->
+          <view class="weui-cell weui-cell_active">
+            <textarea class="weui-textarea" placeholder="备注" placeholder-class="weui-input__placeholder" rows="3"
+              bindinput="count"></textarea>
+            <view class="weui-textarea-counter"><span>{{remark.length}}</span>/200</view>
+          </view>
+        </view>
+      </view>
+      <view class="weui-form__opr-area" id="submit-area">
+        <a class="weui-btn weui-btn_primary" bindtap="submit">确定</a>
+      </view>
+    </view>
+  </view>
+</view>

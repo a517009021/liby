@@ -1,0 +1,18 @@
+<import src="/template/service-template/service-template.wxml" />
+
+<view class="page__bd">
+  <block>
+    <template is="headerImageTemplate"></template>
+  </block>
+  <view wx:for="{{selectedServiceSubType}}" wx:for-index="key" wx:for-item="value">
+    <view class="weui-cell__title">{{key}}</view>
+    <view class="weui-cells demo_badge_cells">
+      <view wx:for="{{value}}" wx:key="key" class="weui-cell weui-cell_active weui-cell_access" >
+        <view class="weui-cell__bd" bindtap="selectSubService" data-subtype="{{item}}">
+          <text class="demo_badge_title">{{item}}</text>
+        </view>
+        <view class="weui-cell__ft"></view>
+      </view>
+    </view>
+  </view>
+</view>

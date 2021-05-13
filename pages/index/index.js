@@ -4,45 +4,84 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'changed by ThinkPad',
+    service: {
+      '法律服务': {
+        'name': '法律服务',
+        'logo': '/images/law_icon.png',
+        'profile': '法律信息'
+      },
+      '办公服务': {
+        'name': '办公服务',
+        'logo': '/images/office.png',
+        'profile': '办公服务信息'
+      },
+      '人力资源服务': {
+        'name': '人力资源服务',
+        'logo': '/images/hire.png',
+        'profile': '人力资源服务信息'
+      },
+      '缴费': {
+        'name': '缴费',
+        'logo': '/images/pay.png',
+        'profile': '缴费信息'
+      },
+    },
+    exist: '',
+    company: '',
+    openID: '',
     userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+    toast: false,
+    hideToast: false,
   },
+
   // 事件处理函数
   bindViewTap() {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
-  onLoad() {
-    if (wx.getUserProfile) {
+
+  onLoad: function (options) {
+    // 獲取authorize頁面返回的參數
+    console.log(options)
+    this.setData({
+      openID: options.oid,
+      exist: options.exist,
+      userInfo: app.globalData.userInfo,
+      company: options.company
+    })
+  },
+
+  // 选择服务，进入内页 
+  selectType: function (e) {
+    var name = e.currentTarget.dataset.name
+    if (this.data.exist == 'false') {
+      // 弹出toast提示框
       this.setData({
-        canIUseGetUserProfile: true
+        toast: true
+      });
+      setTimeout(() => {
+        this.setData({
+          hideToast: true
+        });
+        setTimeout(() => {
+          this.setData({
+            toast: false,
+            hideToast: false,
+          });
+        }, 300);
+      }, 500);
+    } else {
+      wx.navigateTo({
+        url: '/pages/service/service?service=' + name,
       })
     }
   },
-  getUserProfile(e) {
-    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-    wx.getUserProfile({
-      desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-      success: (res) => {
-        console.log(res)
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
+
+  applyAccount: function (e) {
+    wx.navigateTo({
+      url: '/pages/apply/apply',
     })
   },
-  getUserInfo(e) {
-    // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-    console.log(e)
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  }
+
 })

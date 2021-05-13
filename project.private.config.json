@@ -1,0 +1,54 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/apply/apply",
+          "pathName": "pages/apply/apply",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/subService/pay_service/pay_service",
+          "pathName": "pages/subService/pay_service/pay_service",
+          "query": "ss=车位租金",
+          "scene": null
+        },
+        {
+          "name": "pages/msg/msg",
+          "pathName": "pages/msg/msg",
+          "query": "status=true&msg=1",
+          "scene": null
+        },
+        {
+          "name": "pages/authorize/authorize",
+          "pathName": "pages/authorize/authorize",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/service/service",
+          "pathName": "pages/service/service",
+          "query": "service=法律服务",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

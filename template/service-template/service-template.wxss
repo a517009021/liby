@@ -1,0 +1,9 @@
+.header_image_area {
+  display: flex;
+  justify-content: space-between;
+}
+
+image {
+  width: 217px;
+  height: 158px;
+}
