@@ -47,6 +47,12 @@
           "pathName": "pages/service/service",
           "query": "service=法律服务",
           "scene": null
+        },
+        {
+          "name": "pages/card/card",
+          "pathName": "pages/card/card",
+          "query": "type=card1",
+          "scene": null
         }
       ]
     }

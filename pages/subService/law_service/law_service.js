@@ -1,4 +1,6 @@
 // pages/subService/subService.js
+const app = getApp()
+
 Page({
 
   /**
@@ -14,8 +16,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    app.checkOpenID()
     this.setData({
       subService: options.ss,
+    })
+    // 设置页面title
+    wx.setNavigationBarTitle({
+      title: this.data.subService,
     })
   },
   count: function (e) {
@@ -30,14 +37,9 @@ Page({
       title: '提示',
       content: '将会有专人与您联系',
       showCancel: false,
-      success (res) {
-        if (res.confirm) {
-        } else if (res.cancel) {
-        }
+      success(res) {
+        if (res.confirm) {} else if (res.cancel) {}
       }
     })
-    // if (this.data.txt) {
-      
-    // }
   },
 })

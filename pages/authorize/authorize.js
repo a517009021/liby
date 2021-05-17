@@ -10,6 +10,10 @@ Page({
 
   },
 
+  onLoad: function(){
+    this.getAuthorize()
+  },
+
   getAuthorize: function () {
     this.getUserProfile();
   },

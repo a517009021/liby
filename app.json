@@ -1,21 +1,23 @@
 {
   "pages": [
+    "pages/authorize/authorize",
     "pages/index/index",
     "pages/logs/logs",
     "pages/apply/apply",
-    "pages/authorize/authorize",
     "pages/service/service",
     "pages/subService/law_service/law_service",
     "pages/subService/office_service/office_service",
     "pages/subService/pay_service/pay_service",
     "pages/subService/hr_service/hr_service",
+    "pages/card/card",
     "pages/msg/msg",
-    "template/service-template/service-template"
+    "template/service-template/service-template",
+    "template/plate-number/plate-number-template"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "立壹科技",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",

@@ -1,0 +1,45 @@
+/* pages/card/card.wxss */
+.page{
+
+}
+
+.card-content {
+  background: rgba(25 ,25, 112, 0.5);
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, .5);
+  height: 380rpx;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.username-area {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.item-area {
+  font-size: 15px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  line-height: 70rpx;
+}
+
+.key-text{
+  font-weight: bold;
+}
+
+.key-text::after{
+  content: ':';
+  color: #ffffff;
+  margin: 0 10px;
+}
+
+.demo_badge_title {
+  font-size: 20px;
+  font-weight: bold;
+}

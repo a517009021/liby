@@ -1,4 +1,9 @@
 /**index.wxss**/
+
+
+.page {
+  margin-top: 20rpx;
+}
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -25,12 +30,34 @@
 .logo-area {
   display: flex;
   justify-content: space-between;
-  /* margin-left:10px; */
 }
 
 .logoImg {
   width: 412px;
   height: 106px;
+}
+
+/* 轮播图子项 */
+.swiper-item-area {
+  width: 310px !important;
+  height: 80% !important;
+  border-radius: 10px;
+}
+
+.weui-media-box__title  {
+  color: #fff;
+}
+
+.weui-media-box__desc {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+/* 轮播图子项 */
+
+.userinfo-area {
+  border: 1px solid #ededed;
+  border-radius: 10px;
 }
 
 .itemIcon {

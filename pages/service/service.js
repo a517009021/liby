@@ -1,4 +1,6 @@
 // pages/service/service.js
+const app = getApp()
+
 Page({
 
   /**
@@ -19,20 +21,35 @@ Page({
         '办公场地': ['租金', '管理费', '水电费', '其他'],
         '车位': ['车位租金']
       },
+      '供应商合作':{},
+      '供应商管理':{},
+      '查看合同':{},
+      '申请流程':{},
+      '数据分析':{},
+      '通讯录':{},
+      '邮箱':{},
     },
     selectedService: '',
     selectedServiceSubType: {},
+    showOrNot: true,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var service = options.service
-    var subType = this.data.serviceType[service]
+    app.checkOpenID()
+    let service = options.service
+    let show = options.show
+    let subType = this.data.serviceType[service]
     this.setData({
+      showOrNot: show,  // 显示前4项，后7项未开放
       selectedService: service,
       selectedServiceSubType: subType,
+    })
+    // 设置页面title
+    wx.setNavigationBarTitle({
+      title: this.data.selectedService,
     })
   },
 

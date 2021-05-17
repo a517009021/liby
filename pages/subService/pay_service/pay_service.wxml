@@ -1,3 +1,5 @@
+<import src="/template/plate-number/plate-number-template.wxml" />
+
 <view class="page" data-weui-theme="{{theme}}">
   <view class="page__bd">
     <view class="weui-article">
@@ -21,16 +23,8 @@
           </block>
           <!-- 车牌号码 -->
           <block wx:else>
-            <view class="weui-cell weui-cell_active">
-              <view class="weui-cell__hd"><label class="weui-label">车牌号码:</label></view>
-              <view class="weui-cell__bd weui-flex">
-                <input class="weui-input" type="digit" placeholder="请输入车牌号码" placeholder-class="weui-input__placeholder"
-                  bindinput="onInput" value="{{plateNumber}}" data-model="plateNumber"/>
-                <view wx:if="{{showClearBtn && plateNumber}}" class="weui-btn_reset weui-btn_icon weui-btn_input-clear"
-                  bindtap="onClear" data-model="plateNumber">
-                  <i class="weui-icon-clear"></i>
-                </view>
-              </view>
+            <view class="weui-cell__bd weui-flex" style="height:180rpx">
+              <template is="plate-number-input" data="{{provinces, numbers, carnum, showNewPower, KeyboardState}}"></template>
             </view>
           </block>
           <!-- 日期 -->
@@ -57,10 +51,10 @@
             </view>
           </view>
           <!-- 备注 -->
-          <view class="weui-cell weui-cell_active">
+          <view class="weui-cell weui-cell_active" style="border:1px solid darkgray;">
             <textarea class="weui-textarea" placeholder="备注" placeholder-class="weui-input__placeholder" rows="3"
               bindinput="count"></textarea>
-            <view class="weui-textarea-counter"><span>{{remark.length}}</span>/200</view>
+            <view class="weui-textarea-counter"><span>{{remark.length}}</span>/140</view>
           </view>
         </view>
       </view>

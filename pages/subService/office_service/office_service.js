@@ -1,4 +1,6 @@
 // pages/subService/office_service.js
+const app = getApp()
+
 Page({
 
   /**
@@ -17,8 +19,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    app.checkOpenID()
     this.setData({
       subService: options.ss,
+    })
+    // 设置页面title
+    wx.setNavigationBarTitle({
+      title: this.data.subService,
     })
   },
 
@@ -47,16 +54,14 @@ Page({
 
   submit: function () {
     // if (this.data.selectedPlace && this.data.selectedDate && this.data.selectedTime) {
-      wx.showModal({
-        title: '提示',
-        content: '预定成功',
-        showCancel: false,
-        success (res) {
-          if (res.confirm) {
-          } else if (res.cancel) {
-          }
-        }
-      })
+    wx.showModal({
+      title: '提示',
+      content: '预定成功',
+      showCancel: false,
+      success(res) {
+        if (res.confirm) {} else if (res.cancel) {}
+      }
+    })
     // }
   },
 
