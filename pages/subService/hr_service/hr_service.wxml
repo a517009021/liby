@@ -1,0 +1,34 @@
+<view class="page" data-weui-theme="{{theme}}">
+  <view class="page__bd">
+    <view class="weui-article">
+      <view class="weui-article__h1">{{subService}}</view>
+      <!-- sub1: ['劳动争议', '合同纠纷', '法律援助', '公证服务'] -->
+      <view class="weui-article__section">
+        <view class="weui-article__h2">简要描述</view>
+        <view class="weui-article__section">
+          <view class="weui-cells weui-cells_form">
+            <view class="weui-cell__bd">
+              <textarea class="weui-textarea" placeholder="请描述职位要求" placeholder-class="weui-input__placeholder" rows="3"
+                bindinput="count"></textarea>
+              <view class="weui-textarea-counter"><span>{{txtLength}}</span>/200</view>
+            </view>
+            <view class="weui-cell weui-cell_active">
+              <view class="weui-cell__hd"><label class="weui-label">人数</label></view>
+              <view class="weui-cell__bd weui-flex">
+                <input class="weui-input" type="number" placeholder="请输入招聘人数"
+                  placeholder-class="weui-input__placeholder" bindinput="onInput" value="{{headCount}}" />
+                <view wx:if="{{showClearBtn}}" class="weui-btn_reset weui-btn_icon weui-btn_input-clear"
+                  bindtap="onClear">
+                  <i class="weui-icon-clear"></i>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="weui-form__opr-area" id="submit-area">
+        <a class="weui-btn weui-btn_primary" bindtap="submit">确定</a>
+      </view>
+    </view>
+  </view>
+</view>

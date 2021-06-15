@@ -1,0 +1,6 @@
+<template name="headerImageTemplate">
+  <view class="header_image_area">
+    <view></view>
+    <view><image src="/images/blue1.png"></image></view>
+  </view>
+</template>

@@ -1,0 +1,23 @@
+<view class="page" data-weui-theme="{{theme}}">
+  <view class="page__bd">
+    <view class="weui-article">
+      <view class="weui-article__h1">{{subService}}</view>
+      <!-- sub1: ['劳动争议', '合同纠纷', '法律援助', '公证服务'] -->
+      <view class="weui-article__section">
+        <view class="weui-article__h2">简要描述</view>
+        <view class="weui-article__section">
+          <view class="weui-cells weui-cells_form">
+            <view class="weui-cell__bd">
+              <textarea class="weui-textarea" placeholder="请描述你所发生的问题" placeholder-class="weui-input__placeholder"
+                rows="3" bindinput="count" ></textarea>
+              <view class="weui-textarea-counter"><span>{{txtLength}}</span>/200</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="weui-form__opr-area" id="submit-area">
+        <a class="weui-btn weui-btn_primary" bindtap="submit">确定</a>
+      </view>
+    </view>
+  </view>
+</view>

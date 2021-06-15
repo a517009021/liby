@@ -1,0 +1,9 @@
+@import "/template/plate-number/plate-number-template.wxss";
+
+textarea {
+  height: 200rpx;
+}
+
+.subScriptionBtn{
+  background: #10aeff;
+}

@@ -5,7 +5,6 @@ App({
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
     // 登录
     wx.login({
       success: res => {
@@ -13,7 +12,17 @@ App({
       }
     })
   },
+  // 检查openID
+  checkOpenID: function () {
+
+    if (this.globalData.openID == '') {
+      wx.reLaunch({
+        url: '/pages/authorize/authorize',
+      })
+    }
+  },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    openID: '',
   }
 })

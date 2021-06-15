@@ -1,0 +1,8 @@
+<view class="page">
+  <view>
+    <text>进入该小程序需要进行授权</text>
+  </view>
+  <view>
+    <button class="weui-btn weui-btn_primary" bindtap="getAuthorize">授权</button>
+  </view>
+</view>

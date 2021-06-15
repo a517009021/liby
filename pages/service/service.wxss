@@ -1,0 +1,13 @@
+@import "/template/service-template/service-template.wxss";
+
+.weui-cell__title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+  margin-left: 1em;
+}
+
+.demo_badge_title {
+  font-size: 20px;
+  margin-left: 1em;
+}

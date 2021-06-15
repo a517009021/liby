@@ -1,0 +1,5 @@
+/* pages/subService/subService.wxss */
+.page {
+  background-color: var(--weui-BG-2);
+  padding-left: 1em;
+}

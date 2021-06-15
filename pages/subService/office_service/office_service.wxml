@@ -1,0 +1,51 @@
+<view class="page" data-weui-theme="{{theme}}">
+  <view class="page__bd">
+    <view class="weui-article">
+      <view class="weui-article__h1">{{subService}}</view>
+      <!-- sub1: ['劳动争议', '合同纠纷', '法律援助', '公证服务'] -->
+      <view class="weui-article__section">
+        <!-- <view class="weui-article__h2">简要描述</view> -->
+        <view class="weui-article__section">
+          <view class="weui-cells weui-cells_form">
+            <!-- 地点 -->
+            <view class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after">
+              <view class="weui-cell__hd">
+                <label class="weui-label" style="width: 3em; font-size: 1.05em">地点:</label>
+              </view>
+              <view class="weui-cell__bd">
+                <picker bindchange="placeChange" range="{{places}}" index="{{index}} ">
+                  <view class="weui-select" style="text-align:center">{{places[index]}}</view>
+                </picker>
+              </view>
+            </view>
+            <!-- 日期 -->
+            <view class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after">
+              <view class="weui-cell__hd">
+                <label class="weui-label" style="width: 3em; font-size: 1.05em">日期:</label>
+              </view>
+              <view class="weui-cell__bd">
+                <picker bindchange="dateChange" mode="date">
+                  <view class="weui-select" style="text-align:center">{{selectedDate}}</view>
+                </picker>
+              </view>
+            </view>
+            <!-- 时间 -->
+            <view class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after">
+              <view class="weui-cell__hd">
+                <label class="weui-label" style="width: 3em; font-size: 1.05em">时间:</label>
+              </view>
+              <view class="weui-cell__bd">
+                <picker bindchange="timeChange" mode="time">
+                  <view class="weui-select" style="text-align:center">{{selectedTime}}</view>
+                </picker>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="weui-form__opr-area" id="submit-area">
+        <a class="weui-btn weui-btn_primary" bindtap="submit">确定</a>
+      </view>
+    </view>
+  </view>
+</view>
