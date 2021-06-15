@@ -4,6 +4,7 @@
 .page {
   margin-top: 20rpx;
 }
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -44,7 +45,7 @@
   border-radius: 10px;
 }
 
-.weui-media-box__title  {
+.weui-media-box__title {
   color: #fff;
 }
 
@@ -53,6 +54,7 @@
   font-size: 20px;
   font-weight: bold;
 }
+
 /* 轮播图子项 */
 
 .userinfo-area {
@@ -112,4 +114,10 @@
 .weui-btn_mini {
   margin-right: 4px;
   width: 100px !important;
+}
+
+/* 导航条 */
+.weui-tab__content {
+  padding-top: 60px;
+  text-align: center
 }

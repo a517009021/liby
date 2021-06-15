@@ -14,6 +14,7 @@
     "template/service-template/service-template",
     "template/plate-number/plate-number-template"
   ],
+  "entryPagePath": "pages/authorize/authorize",
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

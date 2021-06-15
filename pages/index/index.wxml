@@ -8,10 +8,12 @@
     </view>
   </view>
 
+  <!-- logo -->
   <view class="logo-area">
     <image class="logoImg" src="/images/r-gz2.png"></image>
   </view>
 
+  <!-- 登陆者状态 -->
   <view class="page-userInfo">
     <view class="page__bd">
       <view class="weui-cells demo_badge_cells userinfo-area">
@@ -32,11 +34,13 @@
       </view>
     </view>
   </view>
+
+  <!-- 我的证照轮播图 -->
   <view class="page-content">
     <!-- 轮播图 -->
     <view class="page">
       <view class="weui-cell__hd" style="margin-bottom: 10px">
-        <label class="weui-label" style="color: darkgrey">我的证照</label>
+        <label class="weui-label" style="color: darkgrey">Dashboard</label>
       </view>
       <view class="page-section page-section-spacing swiper">
         <swiper indicator-dots="true" autoplay="false" interval="200000" duration="500" previous-margin="15px"
@@ -65,10 +69,11 @@
         </swiper>
       </view>
     </view>
+
     <!-- 常用服务 -->
     <view class="page">
       <view class="weui-cell__hd">
-        <label class="weui-label" style="color: darkgrey">常用服务</label>
+        <label class="weui-label" style="color: darkgrey">品牌集群</label>
       </view>
       <view class="page__bd">
         <view class="weui-cells demo_badge_cells" wx:for="{{service}}" wx:key="key" data-name="{{item.name}}"

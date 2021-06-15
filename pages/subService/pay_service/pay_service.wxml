@@ -24,7 +24,8 @@
           <!-- 车牌号码 -->
           <block wx:else>
             <view class="weui-cell__bd weui-flex" style="height:180rpx">
-              <template is="plate-number-input" data="{{provinces, numbers, carnum, showNewPower, KeyboardState}}"></template>
+              <template is="plate-number-input"
+                data="{{provinces, numbers, carnum, showNewPower, KeyboardState}}"></template>
             </view>
           </block>
           <!-- 日期 -->
@@ -55,6 +56,15 @@
             <textarea class="weui-textarea" placeholder="备注" placeholder-class="weui-input__placeholder" rows="3"
               bindinput="count"></textarea>
             <view class="weui-textarea-counter"><span>{{remark.length}}</span>/140</view>
+          </view>
+          <!-- 订阅事件 -->
+          <view class="weui-cell weui-cell_active">
+            <view class="weui-flex__item">
+              为了能更好地通知到您，请点击订阅。
+            </view>
+            <view class="placeholder">
+              <a class="weui-btn weui-btn_mini subScriptionBtn" bindtap="subScript">订阅</a>
+            </view>
           </view>
         </view>
       </view>

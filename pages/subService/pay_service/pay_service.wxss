@@ -3,3 +3,7 @@
 textarea {
   height: 200rpx;
 }
+
+.subScriptionBtn{
+  background: #10aeff;
+}
