@@ -37,12 +37,6 @@
           "scene": null
         },
         {
-          "name": "pages/authorize/authorize",
-          "pathName": "pages/authorize/authorize",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "pages/service/service",
           "pathName": "pages/service/service",
           "query": "service=车位租金",

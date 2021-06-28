@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/authorize/authorize",
     "pages/index/index",
+    "pages/authorize/authorize",
     "pages/logs/logs",
     "pages/apply/apply",
     "pages/service/service",
@@ -14,7 +14,7 @@
     "template/service-template/service-template",
     "template/plate-number/plate-number-template"
   ],
-  "entryPagePath": "pages/authorize/authorize",
+  "entryPagePath": "pages/index/index",
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

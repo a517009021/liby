@@ -1,6 +1,8 @@
 // pages/subService/page_service/pay_service.js
 
 const app = getApp()
+var zhenzisms = require('../../../utils/zhenzisms.js');
+
 
 Page({
 
@@ -100,8 +102,9 @@ Page({
       content: '缴费成功',
       showCancel: false,
       success(res) {
-        console.log(_this.data.carnum.join(''))
-        if (res.confirm) {} else if (res.cancel) {}
+        // console.log(_this.data.carnum.join(''))
+        // if (res.confirm) {} else if (res.cancel) {}
+        _this.sendSms()
       }
     })
     // }
@@ -210,5 +213,34 @@ Page({
       },
       
     })
-  }
+  },
+
+  // 发送短信到指定手机号码上
+  getCode(e) {
+    console.log('获取验证码');
+    var that = this;
+    zhenzisms.client.init('https://sms_developer.zhenzikj.com', '109325', 'ceaa8b75-473d-41ea-9bfd-202a24bcb59b');
+    zhenzisms.client.send(function (res) {
+     console.log(res.data)
+    }, that.data.remark, '验证码为:3322');
+   },
+
+   sendSms(e) {
+    var params = {};
+    params.number = '18702074752';
+    params.templateId = '5730';
+    params.messageId = '';
+    //生成验证码，参数1:验证码位数，参数2:验证码有效期(秒),参数3:手机号码
+    zhenzisms.client.init('https://sms_developer.zhenzikj.com', '109325', 'ceaa8b75-473d-41ea-9bfd-202a24bcb59b');
+    var code = zhenzisms.client.createCode(4, 300, params.number);
+    var templateParams = [code, '5分钟'];
+    params.templateParams = templateParams;
+    zhenzisms.client.send(function (res) {
+      wx.showToast({
+        title: res.data.data,
+        icon: 'none',
+        duration: 2000
+      })
+    }, params);  
+   }
 })

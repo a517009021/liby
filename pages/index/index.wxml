@@ -19,17 +19,23 @@
       <view class="weui-cells demo_badge_cells userinfo-area">
         <view class="weui-cell weui-cell_active">
           <view class="weui-cell__hd">
-            <image class="userIcon" src="{{userInfo.avatarUrl}}" style="height:50px; border-radius:50%"></image>
+            <open-data type="userAvatarUrl"
+              style="display:block; width:100rpx; height:100rpx; border-radius: 50%; overflow: hidden"></open-data>
           </view>
           <view class="weui-cell__bd">
-            <view>{{userInfo.nickName}}</view>
-            <view class="demo_badge_desc" wx:if="{{exist == 'true'}}">{{company}}</view>
-            <view class="demo_badge_desc" wx:if="{{exist == 'false'}}">您暂无权限，请先申请</view>
+            <open-data type="userNickName"></open-data>
+            <!-- <view class="demo_badge_desc" wx:if="{{exist == 'true'}}">{{company}}</view>
+            <view class="demo_badge_desc" wx:if="{{exist == 'false'}}">您暂无权限，请先申请</view> -->
           </view>
-          <view class="weui-cell__ft" wx:if="{{exist == 'false'}}">
+
+          <viwe class="weui-cell__ft" wx:if="{{openID == ''}}">
+            <button id="applyAuthorityBtn" class="weui-btn weui-btn_mini" style="float: right; background:rgba(72,61,139,1)" bindtap="applyAuthority" animation="{{ani}}">授权</button>
+          </viwe>
+
+          <!-- <view class="weui-cell__ft" wx:if="{{exist == 'false'}}">
             <button class="weui-btn weui-btn_primary weui-btn_mini" bindtap="applyAccount"
-              style="float:right">申请权限</button>
-          </view>
+              style="float:right" animation="{{ani1}}">申请权限</button>
+          </view> -->
         </view>
       </view>
     </view>
@@ -47,10 +53,10 @@
           next-margin="15px" style="height:180px">
           <block wx:for="{{swiper_item}}" wx:key="key">
             <swiper-item style="display:flex; justify-content:center; align-item:center">
-              <view class="weui-panel swiper-item-area" style="background:url({{item.bg}})"
-                bindtap="selectSwiperItem" data-name="{{item.name}}">
+              <view class="weui-panel swiper-item-area" style="background:url({{item.bg}})" bindtap="selectSwiperItem"
+                data-name="{{item.name}}">
                 <view class="weui-media-box__bd">
-                  <view class="weui-media-box weui-media-box_appmsg">
+                  <vi-ew class="weui-media-box weui-media-box_appmsg">
                     <view class="weui-media-box__hd" style="margin-bottom:100rpx">
                       <image class="weui-media-box__thumb" src="{{item.logo}}"></image>
                     </view>
@@ -77,7 +83,7 @@
       </view>
       <view class="page__bd">
         <view class="weui-cells demo_badge_cells" wx:for="{{service}}" wx:key="key" data-name="{{item.name}}"
-          bindtap="selectType">
+          bindtap="selectType" style="height: 72px">
           <view class="weui-cell weui-cell_active weui-cell_access">
             <view class="weui-cell__hd">
               <image class="itemIcon" src="{{item.logo}}"></image>

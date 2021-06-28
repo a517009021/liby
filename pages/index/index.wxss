@@ -63,8 +63,8 @@
 }
 
 .itemIcon {
-  width: 40px !important;
-  height: 40px;
+  width: 96rpx !important;
+  height: 96rpx;
 }
 
 /* badge */
